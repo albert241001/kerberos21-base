@@ -1,0 +1,25 @@
+Autentificacio AUTH
+Autoritzacio AUTZ
+AP Auth Provider		ldap,unix,KERBEROS
+IP Information Provider		ldap,unix
+
+
+KINGDOM: EDT:ORG
+
+krb5-admin-server
+
+kadmin.local solament desde el server 
+kadmin.local -q "addprinc alpaca"
+krbtgt/EDT.ORG@EDT.ORG ticket granting ticket
+
+kdc key distribution center
+kadmin admin serv kerb
+
+/etc/init.d/krb5-admin-server start
+/etc/init.d/krb5-kdc start
+
+88/tcp  open  kerberos-sec
+464/tcp open  kpasswd5
+749/tcp open  kerberos-adm
+
+

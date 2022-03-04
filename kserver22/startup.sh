@@ -6,7 +6,7 @@ mv kdc.conf /etc/krb5kdc/kdc.conf
 
 kdb5_util create -s -P masterkey
 
-for user in anna pere marta jordi pau user{01..10} 
+for user in anna pere marta jordi pau kuser{01..10} 
 do
   kadmin.local -q "addprinc -pw k$user $user"
 done 

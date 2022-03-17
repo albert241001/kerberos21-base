@@ -9,7 +9,15 @@ kdb5_util create -s -P masterkey
 for user in anna pere marta jordi pau kuser{01..10} 
 do
   kadmin.local -q "addprinc -pw k$user $user"
-done 
+done
+ 
+kadmin.local -q "addprinc -pw kmarta marta/admin"
+kadmin.local -q "addprinc -pw kpere pere/admin"
+kadmin.local -q "addprinc -pw kpau  pau/admin"
+kadmin.local -q "addprinc -pw ksuper super"
+kadmin.local -q "addprinc -pw kadmin admin "
+
+kadmin.local -q "addprinc -randkey host/sshd.edt.org"
 
 /usr/sbin/krb5kdc
 /usr/sbin/kadmind -nofork
